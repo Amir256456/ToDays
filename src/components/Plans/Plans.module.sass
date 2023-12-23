@@ -1,0 +1,96 @@
+@import "../../styles/variables.sass"
+@import "../../styles/mixins.sass"
+
+.plans
+	padding-top: 80px
+	padding-bottom: 80px
+	width: 100%
+	@include flex(flex-start, center, 0px, 70px, column, n0-wrap)
+	background: $dark
+
+	.headline
+		@include flex(center, center, 25px, 0)
+		width: 100%
+
+		hr
+			width: 40%
+			height: 5px
+			background: #ffffff4d
+			border-radius: 30px
+			border: none
+			outline: none
+
+		h2
+			color: $light
+			font-size: 40px
+			font-weight: 700
+			line-height: 22px
+			letter-spacing: -0.408px
+
+	.wrapper
+		max-width: 1500px
+		@include flex(center, flex-start, 80px, 20px, row, wrap)
+
+		.item
+			@include flex(space-between, flex-start, 0, 0, column, no-wrap)
+			padding: 25px
+			width: 310px
+			height: 430px
+			background: white
+			border-radius: 30px
+
+			h5
+				padding: 6px 13px
+				border-radius: 20px
+				background: $grey
+				color: $light
+				text-align: center
+				font-size: 16px
+				font-weight: 700
+				line-height: 22px
+				letter-spacing: -0.408px
+
+			h4
+				color: $dark
+				font-size: 30px
+				font-weight: 700
+				line-height: 22px
+				letter-spacing: -0.408px
+
+			.halfTransparentText
+				color: rgba(0, 0, 0, 0.50)
+				font-size: 20px
+				font-weight: 700
+				line-height: 22px
+				letter-spacing: -0.408px
+
+			hr
+				width: 90%
+				height: 1px
+				background: rgba(0, 0, 0, 0.50)
+
+			p
+				color: rgba(0, 0, 0, 0.50)
+				font-size: 18px
+				font-weight: 700
+				line-height: 22px
+				letter-spacing: -0.408px
+
+			button
+				width: 215px
+				height: 45px
+				border-radius: 20px
+				background: $dark
+				color: $light
+				font-size: 20px
+				font-weight: 700
+				line-height: 22px
+				letter-spacing: -0.408px
+				align-self: center
+
+		.info
+			color: rgba(255, 255, 255, 0.50)
+			font-size: 16px
+			font-weight: 700
+			line-height: 22px
+		letter-spacing: -0.408px

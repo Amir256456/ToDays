@@ -1,0 +1,32 @@
+@import "../../styles/variables.sass"
+@import "../../styles/mixins.sass"
+
+@include container
+.benefits
+	margin-bottom: 140px
+	width: 100%
+	@include flex(center, 50px, 20px, row, wrap)
+
+	.item
+		@include flex(center, center, 50px, 20px, column, no-wrpa)
+		padding: 30px
+		width: 300px
+		height: 300px
+		background: white
+		border-radius: 30px
+
+		.benefitCardText
+			color: #848484
+			text-align: center
+			font-size: 17px
+			font-weight: 700
+			line-height: 22px
+			letter-spacing: -0.408px
+
+		h3
+			color: $dark
+			text-align: center
+			font-size: 30px
+			font-weight: 700
+			line-height: 22px
+			letter-spacing: -0.408px

@@ -1,0 +1,83 @@
+@import "../../styles/variables.sass"
+@import "../../styles/mixins.sass"
+
+header
+	width: 100%
+	height: 60vh
+	background-image: url('../../images/background.webp')
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center
+
+	@include flex(start, center, 0, 30px, column, no-wrap)
+
+	nav
+		width: 100%
+		height: 125px
+
+		ul
+			height: 100%
+			@include flex(center, center)
+			padding-left: 150px
+			padding-right: 150px
+			list-style-type: none
+
+			li
+				width: 33%
+				height: 100%
+				@include flex(center, center)
+
+				&:last-child
+					@include flex(flex-end, center)
+
+				img
+					width: 53px
+
+				.userBtn
+					@include flex(center, center, 20px)
+					width: 205px
+					height: 65px
+					font-size: 20px
+					border: none
+					border-radius: 20px
+					background: #FFF
+
+					img
+						width: 55px
+
+	h1
+		max-width: 1000px
+		text-align: center
+		font-size: 60px
+		font-weight: 700
+		line-height: 63px
+		color: $dark
+
+		.gradientText
+			background-image: linear-gradient(89deg, #7683EC 3.94%, #76D0EC 30.66%)
+			background-size: 100%
+			-webkit-background-clip: text
+			-moz-background-clip: text
+			-webkit-text-fill-color: transparent
+			-moz-text-fill-color: transparent
+
+	.subtitle
+		max-width: 1000px
+		color: #848484
+		text-align: center
+		font-size: 25px
+		font-weight: 700
+		line-height: 36px
+		letter-spacing: -0.5px
+
+	.subscribeBtn
+		width: 315px
+		height: 65px
+		padding: 0px 20px
+		text-align: center
+		border-radius: 40px
+		background: $dark
+		color: $light
+		font-size: 20px
+		font-weight: 700
+		line-height: 63px
