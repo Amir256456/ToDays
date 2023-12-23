@@ -3,9 +3,9 @@
 
 header
 	width: 100%
-	height: 60vh
+	height: 70vh
 	background-image: url('../../images/background.webp')
-	background-size: cover
+	background-size: 100% 100%
 	background-repeat: no-repeat
 	background-position: center
 
@@ -16,8 +16,9 @@ header
 		height: 125px
 
 		ul
+			width: 100%
 			height: 100%
-			@include flex(center, center)
+			@include flex(space-between, center)
 			padding-left: 150px
 			padding-right: 150px
 			list-style-type: none
@@ -37,7 +38,7 @@ header
 					@include flex(center, center, 20px)
 					width: 205px
 					height: 65px
-					font-size: 20px
+					font-size: 2rem
 					border: none
 					border-radius: 20px
 					background: #FFF
@@ -45,12 +46,19 @@ header
 					img
 						width: 55px
 
+
+				.userLogo
+					display: none
+					border: none
+
+
+
 	h1
 		max-width: 1000px
 		text-align: center
-		font-size: 60px
+		font-size: 6rem
 		font-weight: 700
-		line-height: 63px
+		line-height: 1.2
 		color: $dark
 
 		.gradientText
@@ -65,9 +73,9 @@ header
 		max-width: 1000px
 		color: #848484
 		text-align: center
-		font-size: 25px
+		font-size: 2.5rem
 		font-weight: 700
-		line-height: 36px
+		line-height: 1.4
 		letter-spacing: -0.5px
 
 	.subscribeBtn
@@ -78,6 +86,54 @@ header
 		border-radius: 40px
 		background: $dark
 		color: $light
-		font-size: 20px
+		font-size: 2rem
 		font-weight: 700
 		line-height: 63px
+
+@media screen and (max-width: 1200px)
+	ul
+		@include flex(space-between, center, 0, 0)
+		width: 100%
+		padding-right: 120px !important
+		padding-left: 120px !important
+
+		li
+			justify-content: flex-start !important
+			width: 100% !important
+
+			&:first-child
+				display: none
+			&:last-child
+				justify-content: flex-end !important
+
+@media screen and (max-width: 775px)
+	nav
+		padding-top: 20px
+	ul
+		@include flex(space-between, center, 0, 0)
+		width: 100%
+		padding-right: 50px !important
+		padding-left: 50px !important
+
+		li
+			justify-content: flex-start !important
+			width: 100% !important
+
+			&:first-child
+				display: !important
+			&:last-child
+				justify-content: flex-end !important
+
+@media screen and (max-width: 600px)
+	.userBtn
+		display: none !important
+	.userLogo
+		display: flex !important
+
+
+@media screen and (max-width: 400px)
+	.subscribeBtn
+		width: 250px !important
+	ul
+		padding-right: 20px !important
+		padding-left: 20px !important

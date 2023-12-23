@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../../images/logo.webp'
+import user from '../../images/user.webp'
 import styles from './Header.module.sass'
 
 const Header = () => {
@@ -13,7 +14,11 @@ const Header = () => {
 					</li>
 					<li>
 						<button className={styles.userBtn}>
-							Konstantin <img src={logo}></img>
+							Константин <img src={user}></img>
+						</button>
+
+						<button className={styles.userLogo}>
+							<img src={user}></img>
 						</button>
 					</li>
 				</ul>
