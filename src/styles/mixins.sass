@@ -44,22 +44,22 @@
 	@if $ai == center
 		-webkit-box-align: center
 		-ms-flex-align: center
-		justify-content: center
+		align-items: center
 
 	@if $ai == flex-start
 		-webkit-box-align: start
 		-ms-flex-align: start
-		justify-content: flex-start
+		align-items: flex-start
 
 	@if $ai == flex-end
 		-webkit-box-align: end
 		-ms-flex-align: end
-		justify-content: flex-end
+		align-items: flex-end
 
 	@if $ai == space-between
 		-webkit-box-align: space-between
 		-ms-flex-align: space-between
-		justify-content: space-between
+		align-items: space-between
 
 @mixin bgImage($url, $position, $size)
 	background-image: url($url)
@@ -84,7 +84,7 @@
 		width: 100%
 		max-width: 1200px
 		height: 100%
-		@include flex(flex-start, center, 0, 0, column)
+		@include flex(center, center, 0, 0, column)
 		padding: 0 20px
 
 
