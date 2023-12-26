@@ -6,7 +6,7 @@ header
 	min-height: 70vh
 	height: 100%
 	@include bgImage('../../images/background.webp' ,  center , 100% 100% )
-	@include flex(start, center, 0, 30px, column)
+	@include flex(space-between, center, 0, 0, column)
 	padding-bottom: 20px
 
 	nav
@@ -71,6 +71,7 @@ header
 		max-width: 1000px
 		width: 80%
 		@include font(2.5rem, 700, #848484, 1.4, -0.5px, center)
+		margin: 20px 0
 
 		@media screen and (max-width: 800px)
 			width: 95%

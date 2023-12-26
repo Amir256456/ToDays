@@ -13,7 +13,7 @@
 	@include container
 
 	.headline
-		@include flex(center, center, 25px, 0)
+		@include flex(space-between, center, 0, 0)
 		width: 100vw
 		padding-right: 40px
 		padding-left: 40px
@@ -26,11 +26,16 @@
 			border: none
 			outline: none
 
+			.rightLine
+				margin-left: 30px
+			.leftLine
+				margin-right: 30px
+
 		h2
 			@include font(4rem, 700, $light, 22px, -0.5px, center)
 
 	.wrapper
-		@include flex(center, flex-start, 20px, 30px, row)
+		@include flex(center, flex-start, 10px, 15px, row)
 		flex-wrap: wrap
 		padding-top: 70px
 
@@ -42,9 +47,13 @@
 			background: white
 			border-radius: 30px
 
-
 			@media screen and (max-width: 1180px)
 				width: 370px
+				&:last-child
+					margin-right: 10px
+
+				&:first-child
+					margin-left: 10px
 
 			@media screen and (max-width: 800px)
 				width: 280px

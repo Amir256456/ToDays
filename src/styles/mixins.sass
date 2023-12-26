@@ -3,11 +3,16 @@
 	flex-direction: $direction
 	justify-content: $jc
 	align-items: $ai
-	gap: $gap
-	row-gap: $rowGap
 	display: -webkit-box
 	display: -ms-flexbox
 	display: flex
+
+	.item
+		&:last-child
+			margin-right: 0
+
+		&:first-child
+			margin-left: 0
 
 	@if $direction == row
 		-webkit-box-orient: horizontal
@@ -15,11 +20,17 @@
 		-ms-flex-direction: row
 		flex-direction: row
 
+		.item
+			margin: $rowGap $gap
+
 	@if $direction == column
 		-webkit-box-orient: vertical
 		-webkit-box-direction: normal
 		-ms-flex-direction: column
 		flex-direction: column
+
+		.item
+			margin: $gap $rowGap
 
 	@if $jc == center
 		-webkit-box-pack: center

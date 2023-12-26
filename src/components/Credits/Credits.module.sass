@@ -29,7 +29,7 @@
 			@include font(4rem, 700, $dark, 22px, -0.5px, center)
 
 	.wrapper
-		@include flex(center, flex-start, 40px, 30px, row)
+		@include flex(center, flex-start, 30px, 20px, row)
 		flex-wrap: wrap
 		padding-top: 70px
 
@@ -37,7 +37,7 @@
 			padding-top: 40px
 
 		.item
-			@include flex(center, center, 0, 30px, column)
+			@include flex(space-between, center, 0, 0, column)
 			padding: 30px
 			width: 280px
 			height: 340px
@@ -46,6 +46,11 @@
 
 			@media screen and (max-width: 920px)
 				width: 50%
+				&:last-child
+					margin-right: 20px
+
+				&:first-child
+					margin-left: 20px
 
 			@media screen and (max-width: 600px)
 				width: 240px
