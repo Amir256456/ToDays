@@ -2,15 +2,21 @@
 @import "../../styles/mixins.sass"
 
 .plans
+	position: relative
+	width: 100vw
+	height: 100%
 	padding-top: 80px
 	padding-bottom: 80px
-	width: 100%
-	@include flex(flex-start, center, 0px, 70px, column, n0-wrap)
+	@include flex(flex-start, center, 0, 0, column)
 	background: $dark
+
+	@include container
 
 	.headline
 		@include flex(center, center, 25px, 0)
-		width: 100%
+		width: 100vw
+		padding-right: 40px
+		padding-left: 40px
 
 		hr
 			width: 40%
@@ -21,48 +27,40 @@
 			outline: none
 
 		h2
-			color: $light
-			font-size: 4rem
-			font-weight: 700
-			line-height: 22px
-			letter-spacing: -0.408px
+			@include font(4rem, 700, $light, 22px, -0.5px, center)
 
 	.wrapper
-		max-width: 1500px
-		@include flex(center, flex-start, 80px, 20px, row, wrap)
+		@include flex(center, flex-start, 20px, 30px, row)
+		flex-wrap: wrap
+		padding-top: 70px
 
 		.item
-			@include flex(space-between, flex-start, 0, 0, column, no-wrap)
+			@include flex(space-between, flex-start, 0, 0, column)
 			padding: 25px
-			width: 310px
+			width: 270px
 			height: 430px
 			background: white
 			border-radius: 30px
+
+
+			@media screen and (max-width: 1180px)
+				width: 370px
+
+			@media screen and (max-width: 800px)
+				width: 280px
+				height: 350px
 
 			h5
 				padding: 6px 13px
 				border-radius: 20px
 				background: $grey
-				color: $light
-				text-align: center
-				font-size: 1.6rem
-				font-weight: 700
-				line-height: 22px
-				letter-spacing: -0.408px
+				@include font(1.6rem, 700, $light, 22px, -0.5px, center)
 
 			h4
-				color: $dark
-				font-size: 3rem
-				font-weight: 700
-				line-height: 22px
-				letter-spacing: -0.408px
+				@include font(3rem, 700, $dark, 22px, -0.5px)
 
 			.halfTransparentText
-				color: rgba(0, 0, 0, 0.50)
-				font-size: 2rem
-				font-weight: 700
-				line-height: 22px
-				letter-spacing: -0.408px
+				@include font(2rem, 700, $dark, 22px, -0.5px)
 
 			hr
 				width: 90%
@@ -70,28 +68,19 @@
 				background: rgba(0, 0, 0, 0.50)
 
 			p
-				color: rgba(0, 0, 0, 0.50)
-				font-size: 1.8rem
-				font-weight: 700
-				line-height: 22px
-				letter-spacing: -0.408px
+				@include font(1.8rem, 700,rgba(0, 0, 0, 0.50), 22px, -0.5px)
 
 			button
 				width: 215px
 				height: 45px
 				border-radius: 20px
 				background: $dark
-				color: $light
-				font-size: 2rem
-				font-weight: 700
-				line-height: 22px
-				letter-spacing: -0.408px
-				align-self: center
+				@include font(2rem, 700,$light, 22px, -0.5px, center)
 
 		.info
 			width: 90%
-			color: rgba(255, 255, 255, 0.50)
-			font-size: 1.6rem
-			font-weight: 700
-			line-height: 22px
-			letter-spacing: -0.408px
+			@include font(1.6rem, 700, rgba(255, 255, 255, 0.50), 22px, -0.5px)
+
+			@media screen and (max-width: 400px)
+				font-size: 12px
+				width: 85%

@@ -39,44 +39,46 @@ const items = [
 const Plans = () => {
 	return (
 		<div className={styles.plans}>
-			<div className={styles.headline}>
-				<hr />
-				<h2>Тарифы</h2>
-				<hr />
-			</div>
+			<div className={styles.container}>
+				<div className={styles.headline}>
+					<hr className={styles.leftLine} />
+					<h2>Тарифы</h2>
+					<hr className={styles.rightLine} />
+				</div>
 
-			<div className={styles.wrapper}>
-				{items.map(item => (
-					<div className={styles.item} key={item.plan}>
-						<h5>{item.plan}</h5>
-						<h4>
-							{item.pricePerMonth}.00 руб.{' '}
+				<div className={styles.wrapper}>
+					{items.map(item => (
+						<div className={styles.item} key={item.plan}>
+							<h5>{item.plan}</h5>
+							<h4>
+								{item.pricePerMonth}.00 руб.{' '}
+								<span className={styles.halfTransparentText}>
+									{' '}
+									{item.perTime}
+								</span>
+							</h4>
 							<span className={styles.halfTransparentText}>
-								{' '}
-								{item.perTime}
+								Всего {item.pricePerYear}.00 руб. / год
 							</span>
-						</h4>
-						<span className={styles.halfTransparentText}>
-							Всего {item.pricePerYear}.00 руб. / год
-						</span>
-						<hr />
-						<p>{item.description}</p>
-						<button>Купить</button>
-					</div>
-				))}
-			</div>
+							<hr />
+							<p>{item.description}</p>
+							<button>Купить</button>
+						</div>
+					))}
+				</div>
 
-			<div className={styles.wrapper}>
-				<p className={styles.info}>
-					Оформляя подписку, вы соглашаетесь с тем, что для её продления будут
-					совершаться регулярные платежи. После окончания оплаченного периода
-					подписка будет действовать в течение 5 дней, параллельно с этим будут
-					производиться попытки списания по выбранному методы оплаты. В случае
-					невозможности оплаты подписки в указанный срок, доступ к возможностям
-					подписки будет ограничен до следующего платежа. <br /> <br /> Подписка
-					продлевается автоматически - для её отключения необходимо отменить её
-					в магазине приложений.
-				</p>
+				<div className={styles.wrapper}>
+					<p className={styles.info}>
+						Оформляя подписку, вы соглашаетесь с тем, что для её продления будут
+						совершаться регулярные платежи. После окончания оплаченного периода
+						подписка будет действовать в течение 5 дней, параллельно с этим
+						будут производиться попытки списания по выбранному методы оплаты. В
+						случае невозможности оплаты подписки в указанный срок, доступ к
+						возможностям подписки будет ограничен до следующего платежа. <br />{' '}
+						<br /> Подписка продлевается автоматически - для её отключения
+						необходимо отменить её в магазине приложений.
+					</p>
+				</div>
 			</div>
 		</div>
 	)

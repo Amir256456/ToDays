@@ -24,24 +24,29 @@ const items = [
 
 const Credits = () => {
 	return (
-		<div className={styles.credits}>
-			<div className={styles.headline}>
-				<hr />
-				<h2>Валюта</h2>
-				<hr />
-			</div>
+		<div className={styles.container}>
+			<div className={styles.credits}>
+				<div className={styles.headline}>
+					<hr />
+					<h2>Валюта</h2>
+					<hr />
+				</div>
 
-			<div className={styles.wrapper}>
-				{items.map(item => (
-					<div className={styles.item} key={item.amountOfStars}>
-						<img src={item.url} alt='Card Photo' />
-						<h4>
-							{item.amountOfStars}
-							<span className={styles.halfTransparentText}> {item.price}</span>
-						</h4>
-						<button>Купить</button>
-					</div>
-				))}
+				<div className={styles.wrapper}>
+					{items.map(item => (
+						<div className={styles.item} key={item.amountOfStars}>
+							<img src={item.url} alt='Card Photo' />
+							<h4>
+								{item.amountOfStars}
+								<span className={styles.halfTransparentText}>
+									{' '}
+									{item.price}
+								</span>
+							</h4>
+							<button>Купить</button>
+						</div>
+					))}
+				</div>
 			</div>
 		</div>
 	)

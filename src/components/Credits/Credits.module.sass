@@ -1,15 +1,21 @@
 @import "../../styles/variables.sass"
 @import "../../styles/mixins.sass"
 
+@include container
 .credits
-	padding-top: 100px
+	padding-top: 80px
 	padding-bottom: 80px
-	width: 100%
-	@include flex(flex-start, center, 0px, 70px, column, n0-wrap)
+	@include flex(flex-start, center, 0px, 0px, column)
+
+	@media screen and (max-width: 400px)
+		padding-top: 50px
+		padding-bottom: 50px
 
 	.headline
 		@include flex(center, center, 25px, 0)
-		width: 100%
+		width: 100vw
+		padding-right: 40px
+		padding-left: 40px
 
 		hr
 			width: 40%
@@ -20,45 +26,41 @@
 			outline: none
 
 		h2
-			color: $dark
-			font-size: 4rem
-			font-weight: 700
-			line-height: 22px
-			letter-spacing: -0.408px
+			@include font(4rem, 700, $dark, 22px, -0.5px, center)
+
 	.wrapper
-		@include flex(center, flex-start, 250px, 20px, row, wrap)
+		@include flex(center, flex-start, 40px, 30px, row)
+		flex-wrap: wrap
+		padding-top: 70px
+
+		@media screen and (max-width: 400px)
+			padding-top: 40px
 
 		.item
-			@include flex(center, center, 0, 30px, column, no-wrap)
+			@include flex(center, center, 0, 30px, column)
 			padding: 30px
 			width: 280px
 			height: 340px
 			background: #ffffff
 			border-radius: 30px
 
+			@media screen and (max-width: 920px)
+				width: 50%
+
+			@media screen and (max-width: 600px)
+				width: 240px
+				height: 310px
 
 			h4
-				color: $dark
-				font-size: 3rem
-				font-weight: 700
-				line-height: 22px
-				letter-spacing: -0.408px
+				@include font(3rem, 700, $dark, 22px, -0.5px)
 
 			.halfTransparentText
-				color: rgba(0, 0, 0, 0.50)
-				font-size: 2rem
-				font-weight: 700
-				line-height: 22px
-				letter-spacing: -0.408px
+				@include font(2rem, 700, rgba(0, 0, 0, 0.50), 22px, -0.5px)
 
 			button
 				width: 100px
 				height: 40px
 				border-radius: 10px
 				background: $dark
-				color: $light
-				font-size: 2rem
-				font-weight: 700
-				line-height: 22px
-				letter-spacing: -0.408px
-				align-self: center
+				@include font(2rem, 700, $light, 22px, -0.5px, center)
+
