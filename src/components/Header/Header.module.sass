@@ -2,12 +2,13 @@
 @import "../../styles/mixins.sass"
 
 header
-	width: 100%
+	width: 100vw
 	min-height: 70vh
 	height: 100%
 	@include bgImage('../../images/background.webp',  center , 100% 100% )
 	@include flex(space-between, center, 0, 0, column)
 	padding-bottom: 20px
+	overflow-x: hidden
 
 	nav
 		width: 100%

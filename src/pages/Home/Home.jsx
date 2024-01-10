@@ -10,13 +10,15 @@ export const Home = () => {
 	return (
 		<>
 			<Header></Header>
-			<div className={styles.container}>
-				<main>
+
+			<main>
+				<div className={styles.container}>
 					<Benefits></Benefits>
-					<Plans></Plans>
-					<Credits></Credits>
-				</main>
-			</div>
+				</div>
+				<Plans></Plans>
+				<Credits></Credits>
+			</main>
+
 			<Footer></Footer>
 		</>
 	)
