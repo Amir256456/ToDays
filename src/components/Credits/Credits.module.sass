@@ -1,11 +1,18 @@
 @import "../../styles/variables.sass"
 @import "../../styles/mixins.sass"
 
-@include container
+
 .credits
-	padding-top: 80px
+	position: relative
+	width: 100vw
+	height: 100%
+	margin-top: 40px
+	padding-top: 40px
 	padding-bottom: 80px
-	@include flex(flex-start, center, 0px, 0px, column)
+	@include flex(flex-start, center, 0, 0, column)
+	background: $light
+
+	@include container
 
 	@media screen and (max-width: 400px)
 		padding-top: 50px
@@ -20,7 +27,7 @@
 		hr
 			width: 40%
 			height: 5px
-			background: #ffffff4d
+			background: $lightGrey
 			border-radius: 30px
 			border: none
 			outline: none
@@ -29,22 +36,26 @@
 			@include font(4rem, 700, $dark, 22px, -0.5px, center)
 
 	.wrapper
-		@include flex(center, flex-start, 30px, 20px, row)
+		@include flex(space-between, flex-start, 30px, 20px, row)
 		flex-wrap: wrap
 		padding-top: 70px
 
+		@media screen and (max-width: 1030px)
+			justify-content: center
+
 		@media screen and (max-width: 400px)
 			padding-top: 40px
+
 
 		.item
 			@include flex(space-between, center, 0, 0, column)
 			padding: 30px
 			width: 280px
 			height: 340px
-			background: #ffffff
+			background: $lightGrey
 			border-radius: 30px
 
-			@media screen and (max-width: 920px)
+			@media screen and (max-width: 1030px)
 				width: 50%
 				&:last-child
 					margin-right: 20px
@@ -69,3 +80,9 @@
 				background: $dark
 				@include font(2rem, 700, $light, 22px, -0.5px, center)
 
+		p
+			@include font(16px, 400, rgba(0, 0, 0, 0.50), 22px, -0.5px)
+			margin-top: 40px
+
+			@media screen and (max-width: 1030px)
+				padding: 30px

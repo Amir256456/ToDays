@@ -1,9 +1,11 @@
+import { LogIn } from 'lucide-react'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import logo from '../../images/logo.webp'
-import user from '../../images/user.webp'
 import styles from './Header.module.sass'
+export const Header = () => {
+	const navigate = useNavigate()
 
-const Header = () => {
 	return (
 		<header>
 			<nav>
@@ -13,12 +15,18 @@ const Header = () => {
 						<img src={logo} alt='Logo' />
 					</li>
 					<li>
-						<button className={styles.userBtn}>
-							Константин <img src={user}></img>
+						<button
+							className={styles.userBtn}
+							onClick={() => navigate('/ToDays/auth')}
+						>
+							Личный кабинет
 						</button>
 
-						<button className={styles.userLogo}>
-							<img src={user}></img>
+						<button
+							className={styles.userLogo}
+							onClick={() => navigate('/ToDays/auth')}
+						>
+							<LogIn />
 						</button>
 					</li>
 				</ul>
@@ -36,5 +44,3 @@ const Header = () => {
 		</header>
 	)
 }
-
-export default Header

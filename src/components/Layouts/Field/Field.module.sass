@@ -1,0 +1,23 @@
+@import "../../../styles/variables.sass"
+@import "../../../styles/mixins.sass"
+
+.field
+	@include flex(center, flex-start, 0, 0, column)
+	margin: 20px 0
+
+	label
+		@include font(2rem , 600, rgba(0, 0, 0, 0.50), 22px , -0.4px , center)
+
+	input
+		background: none
+		border: 1px solid transparent
+		outline: none
+		border-bottom-color: rgba(0, 0, 0, 0.40)
+		width: 360px
+		margin-top: 10px
+		font-size: 20px
+		padding-bottom: 3px
+
+		@media screen and ( max-width:370px )
+			width: 80vw
+

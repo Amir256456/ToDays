@@ -36,7 +36,7 @@ const items = [
 	},
 ]
 
-const Plans = () => {
+export const Plans = () => {
 	return (
 		<div className={styles.plans}>
 			<div className={styles.container}>
@@ -51,9 +51,8 @@ const Plans = () => {
 						<div className={styles.item} key={item.plan}>
 							<h5>{item.plan}</h5>
 							<h4>
-								{item.pricePerMonth}.00 руб.{' '}
+								{item.pricePerMonth}.00 руб.
 								<span className={styles.halfTransparentText}>
-									{' '}
 									{item.perTime}
 								</span>
 							</h4>
@@ -83,5 +82,3 @@ const Plans = () => {
 		</div>
 	)
 }
-
-export default Plans

@@ -1,0 +1,65 @@
+@import "../../styles/mixins"
+@import "../../styles/variables"
+
+.confirmEmail
+	width: 100vw
+	height: 100vh
+	@include flex(center, center, 0, 0, column)
+
+	h1
+		@include font(3rem , 600, #000 , 22px , -0.5px , center)
+		margin-bottom: 20px
+
+	form
+		@include flex(center, center, 0, 0, column)
+
+		.error
+			@include font(16px , 600, $red, 22px , -0.4px , center)
+
+		.hint
+			@include font(20px , 600, rgba(0, 0, 0, 0.70), 22px , -0.4px , center)
+			margin-bottom: 20px
+
+		.recoverCode
+			margin: 30px 0
+			input
+				width: 60px
+				height: 60px
+				margin: 0 10px
+				text-align: center
+				border-radius: 15px
+				background: $light
+				outline: none
+				border: none
+				@include font(24px , 600, #000, 22px , -0.4px , center)
+
+			input::-webkit-outer-spin-button,
+			input::-webkit-inner-spin-button
+				-webkit-appearance: none
+				margin: 0
+
+
+			input[type=number]
+				-moz-appearance: textfield
+
+
+		button
+			margin-top: 25px
+			width: 190px
+			height: 50px
+			@include font(20px , 600, #000, 22px , -0.4px , center)
+			border-radius: 20px
+			border: none
+			outline: none
+			background: -o-linear-gradient(357deg, rgba(118, 131, 236, 0.20) -2.72%, rgba(118, 208, 236, 0.20) 102.22%)
+			background: linear-gradient(93deg, rgba(118, 131, 236, 0.20) -2.72%, rgba(118, 208, 236, 0.20) 102.22%)
+			cursor: pointer
+
+		.options
+			margin-top: 40px
+			@include flex(center, flex-start)
+
+			span
+				margin: 0 20px
+				@include font(2rem , 600, rgba(0, 0, 0, 0.5), 22px , -0.4px , center)
+				cursor: pointer

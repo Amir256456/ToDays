@@ -5,7 +5,7 @@ import noAds from '../../images/noAds.webp'
 import widgets from '../../images/widgets.webp'
 import styles from './Benefits.module.sass'
 
-const items = [
+export const items = [
 	{
 		url: methods,
 		benefitCardText: 'Доступ ко всем видам планирования',
@@ -28,7 +28,7 @@ const items = [
 	},
 ]
 
-const Benefits = () => {
+export const Benefits = () => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.benefits}>
@@ -45,5 +45,3 @@ const Benefits = () => {
 		</div>
 	)
 }
-
-export default Benefits

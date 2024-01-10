@@ -22,10 +22,10 @@ const items = [
 	},
 ]
 
-const Credits = () => {
+export const Credits = () => {
 	return (
-		<div className={styles.container}>
-			<div className={styles.credits}>
+		<div className={styles.credits}>
+			<div className={styles.container}>
 				<div className={styles.headline}>
 					<hr />
 					<h2>Валюта</h2>
@@ -38,18 +38,18 @@ const Credits = () => {
 							<img src={item.url} alt='Card Photo' />
 							<h4>
 								{item.amountOfStars}
-								<span className={styles.halfTransparentText}>
-									{' '}
-									{item.price}
-								</span>
+								<span className={styles.halfTransparentText}>{item.price}</span>
 							</h4>
 							<button>Купить</button>
 						</div>
 					))}
+					<p>
+						Звёзды это цифровой товар, использующийся внутри приложения для
+						приобретения в бессрочное пользование закрытых методов планирования
+						(в случае если у пользователя нет подписки)
+					</p>
 				</div>
 			</div>
 		</div>
 	)
 }
-
-export default Credits
