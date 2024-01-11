@@ -10,11 +10,11 @@ export const AppRouter = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path='/ToDays/' element={<Home />}></Route>
-				<Route path='/ToDays/auth' element={<Auth />}></Route>
-				<Route path='/ToDays/recover' element={<Recover />}></Route>\
-				<Route path='/ToDays/confirmEmail' element={<ConfirmEmail />}></Route>
-				<Route path='/ToDays/dashboard' element={<Dashboard />}></Route>
+				<Route path='/' element={<Home />}></Route>
+				<Route path='/auth' element={<Auth />}></Route>
+				<Route path='/recover' element={<Recover />}></Route>\
+				<Route path='/confirmEmail' element={<ConfirmEmail />}></Route>
+				<Route path='/dashboard' element={<Dashboard />}></Route>
 			</Routes>
 		</BrowserRouter>
 	)

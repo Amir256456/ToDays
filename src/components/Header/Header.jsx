@@ -17,14 +17,14 @@ export const Header = () => {
 					<li>
 						<button
 							className={styles.userBtn}
-							onClick={() => navigate('/ToDays/auth')}
+							onClick={() => navigate('/auth')}
 						>
 							Личный кабинет
 						</button>
 
 						<button
 							className={styles.userLogo}
-							onClick={() => navigate('/ToDays/auth')}
+							onClick={() => navigate('/auth')}
 						>
 							<LogIn />
 						</button>

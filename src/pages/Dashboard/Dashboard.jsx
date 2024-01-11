@@ -11,27 +11,21 @@ export const Dashboard = () => {
 				<nav>
 					<ul>
 						<li>
-							<Link to='/ToDays/' className={styles.link}>
+							<Link to='/' className={styles.link}>
 								<ChevronLeft />
 								Главная
 							</Link>
-							<Link
-								to='/ToDays/'
-								className={`${styles.link} ${styles.onlyIcon}`}
-							>
+							<Link to='/' className={`${styles.link} ${styles.onlyIcon}`}>
 								<ChevronLeft />
 							</Link>
 						</li>
 						<li>Личный кабинет</li>
 						<li>
-							<Link to='/ToDays/' className={styles.link}>
+							<Link to='/' className={styles.link}>
 								<LogOut className={styles.icon} />
 								Выйти
 							</Link>
-							<Link
-								to='/ToDays/'
-								className={`${styles.link} ${styles.onlyIcon}`}
-							>
+							<Link to='/' className={`${styles.link} ${styles.onlyIcon}`}>
 								<LogOut className={styles.icon} />
 							</Link>
 						</li>

@@ -35,9 +35,9 @@ export const Recover = () => {
 			{step === 'recoverCode' && (
 				<form>
 					<RecoverCodeInput getRecoverCode={getRecoverCode}></RecoverCodeInput>
-					{/* <span className={styles.hint}>
+					<span className={styles.hint}>
 						Ведите код, высланный на указанную почту
-					</span> */}
+					</span>
 					{/* <span className={styles.error}>Неверный код</span> */}
 					<button onClick={() => setStep('newPassword')}>Далее</button>
 				</form>
@@ -48,7 +48,7 @@ export const Recover = () => {
 					<Field field={newPassword} type='Новый пароль'></Field>
 					<Field field={confirmPassword} type='Подтвердите пароль'></Field>
 					{/* <span className={styles.error}>Пароли не совпадают</span> */}
-					<button onClick={() => navigate('/ToDays/dashboard')}>Войти</button>
+					<button onClick={() => navigate('/dashboard')}>Войти</button>
 				</form>
 			)}
 		</div>

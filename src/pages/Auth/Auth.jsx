@@ -22,11 +22,9 @@ export const Auth = () => {
 						{/* <span className={styles.error}>
 							Почта или пароль введены неверно
 						</span> */}
-						<button onClick={() => navigate('/ToDays/dashboard')}>Войти</button>
+						<button onClick={() => navigate('/dashboard')}>Войти</button>
 						<div className={styles.options}>
-							<span onClick={() => navigate('/ToDays/recover')}>
-								Забыли пароль?
-							</span>
+							<span onClick={() => navigate('/recover')}>Забыли пароль?</span>
 							<span onClick={() => setFormType('registration')}>
 								Нет аккаунта?
 							</span>
@@ -45,9 +43,7 @@ export const Auth = () => {
 						{/* <span className={styles.error}>
 							Почта, имя или пароль введены неверно
 						</span> */}
-						<button onClick={() => navigate('/ToDays/confirmEmail')}>
-							Создать
-						</button>
+						<button onClick={() => navigate('/confirmEmail')}>Создать</button>
 						<div className={styles.options}>
 							<span onClick={() => setFormType('login')}>Есть аккаунт?</span>
 						</div>

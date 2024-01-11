@@ -19,7 +19,7 @@ export const ConfirmEmail = () => {
 					Ведите код, высланный на указанную почту
 				</span>
 				{/* <span className={styles.error}>Неверный код</span> */}
-				<button onClick={() => navigate('/ToDays/dashboard')}>Далее</button>
+				<button onClick={() => navigate('/dashboard')}>Далее</button>
 			</form>
 		</div>
 	)
