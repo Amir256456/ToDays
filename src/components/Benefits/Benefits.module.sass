@@ -1,39 +1,54 @@
 @import "../../styles/variables.sass"
 @import "../../styles/mixins.sass"
 
-@include container
 .benefits
-	padding-top: 50px
-	padding-bottom: 100px
-	@include flex(center, center, 10px, 10px, row)
-	flex-wrap: wrap !important
+	position: relative
+	width: 100vw
+	height: 100%
+	@include flex(flex-start, center, 0, 0, column)
 
-	.item
-		@include flex(space-between, center, 0px, 0px, column)
-		padding: 50px 30px
-		min-width: 260px
-		width: 260px
-		height: 300px
-		background: $light
-		border-radius: 30px
+	@include container
 
-		@media screen and (max-width: 1240px)
-			width: 380px !important
+	.wrapper
+		padding-top: 50px
+		padding-bottom: 100px
+		@include flex(center, center, 10px, 10px, row)
+		flex-wrap: wrap !important
 
-			&:last-child
-				margin-right: 10px
+		.item
+			@include flex(space-between, center, 0px, 0px, column)
+			padding: 50px 30px
+			min-width: 260px
+			width: 300px
+			height: 300px
+			background: $light
+			border-radius: 30px
 
-			&:first-child
-				margin-left: 10px
+			@media screen and (max-width: 1240px)
+				width: 380px !important
 
-		@media screen and (max-width: 860px)
-			width: 200px !important
-			height: 250px !important
+				&:last-child
+					margin-right: 10px
 
-		.benefitCardText
-			@include font(2rem, 700, #848484, 22px, -0.5px, center)
+				&:first-child
+					margin-left: 10px
 
-		h2
-			@include font(3rem, 700, $dark, 22px, -0.5px, center)
+			@media screen and (max-width: 860px)
+				width: 200px !important
+				height: 250px !important
+
+			.cardImage
+				@include flex(center,center)
+				width: 50%
+
+				img
+					width: 40%
+
+			.benefitCardText
+				height: 30%
+				@include font(1.9rem, 700, #848484, 22px, -0.5px, center)
+
+			h2
+				@include font(2.6rem, 700, $dark, 22px, -0.5px, center)
 
 

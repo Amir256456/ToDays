@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import UserService from '../../services/UserService'
 import styles from './Plans.module.sass'
 
-const items = [
+const plans = [
 	{
+		purchaseName: 'todays_premium_monthly',
 		plan: 'Стартовый',
 		pricePerMonth: 199,
 		perTime: '/ месяц',
@@ -11,6 +15,7 @@ const items = [
 			'Безлимитный доступ ко всем видам планирования, прохождение обучения и тестов без ограничений',
 	},
 	{
+		purchaseName: 'todays_premium_3month',
 		plan: 'Улучшенный',
 		pricePerMonth: 399,
 		perTime: '/ 3 месяца',
@@ -19,6 +24,7 @@ const items = [
 			'Безлимитный доступ ко всем видам планирования, прохождение обучения и тестов без ограничений',
 	},
 	{
+		purchaseName: 'todays_premium_6month',
 		plan: 'Продвинутый',
 		pricePerMonth: 699,
 		perTime: '/ 6 месяцев',
@@ -27,6 +33,7 @@ const items = [
 			'Безлимитный доступ ко всем видам планирования, прохождение обучения и тестов без ограничений',
 	},
 	{
+		purchaseName: 'todays_premium_12month',
 		plan: 'Премиум',
 		pricePerMonth: 999,
 		perTime: '/ 12 месяцев',
@@ -36,9 +43,60 @@ const items = [
 	},
 ]
 
-export const Plans = () => {
+const Plans = ({ wasScrolled }) => {
+	const isAuth = useSelector(state => state.userReducer.isAuth)
+	const user = useSelector(state => state.userReducer.user)
+	const ref = useRef(null)
+	const navigate = useNavigate()
+
+	const handleScroll = () => {
+		ref.current.scrollIntoView({ behavior: 'smooth' })
+	}
+
+	useEffect(() => {
+		wasScrolled && handleScroll()
+	}, [wasScrolled])
+
+	function openURL(link) {
+		var a = window.document.createElement('a')
+		a.target = '_blank'
+		a.href = link
+
+		// Dispatch fake click
+		var e = window.document.createEvent('MouseEvents')
+		// e.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+		e.initMouseEvent(
+			'click',
+			true,
+			true,
+			window,
+			0,
+			0,
+			0,
+			0,
+			0,
+			true,
+			false,
+			false,
+			false,
+			0,
+			null
+		)
+		a.dispatchEvent(e)
+	}
+
+	const buyPremium = async (purchaseName, price) => {
+		if (!isAuth) {
+			navigate('/auth')
+			return
+		}
+
+		const response = await UserService.buy(user, purchaseName, price)
+		openURL(response.data.data)
+	}
+
 	return (
-		<div className={styles.plans}>
+		<div className={styles.plans} ref={ref}>
 			<div className={styles.container}>
 				<div className={styles.headline}>
 					<hr className={styles.leftLine} />
@@ -47,7 +105,7 @@ export const Plans = () => {
 				</div>
 
 				<div className={styles.wrapper}>
-					{items.map(item => (
+					{plans.map(item => (
 						<div className={styles.item} key={item.plan}>
 							<h5>{item.plan}</h5>
 							<h4>
@@ -61,7 +119,13 @@ export const Plans = () => {
 							</span>
 							<hr />
 							<p>{item.description}</p>
-							<button>Купить</button>
+							<button
+								onClick={() =>
+									buyPremium(item.purchaseName, item.pricePerMonth)
+								}
+							>
+								Купить
+							</button>
 						</div>
 					))}
 				</div>
@@ -82,3 +146,5 @@ export const Plans = () => {
 		</div>
 	)
 }
+
+export default Plans

@@ -1,10 +1,13 @@
 import { LogIn } from 'lucide-react'
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../images/logo.webp'
 import styles from './Header.module.sass'
-export const Header = () => {
+export const Header = ({ onClick }) => {
 	const navigate = useNavigate()
+
+	const isAuth = useSelector(state => state.userReducer.isAuth)
 
 	return (
 		<header>
@@ -17,14 +20,18 @@ export const Header = () => {
 					<li>
 						<button
 							className={styles.userBtn}
-							onClick={() => navigate('/auth')}
+							onClick={() =>
+								isAuth ? navigate('/dashboard') : navigate('/auth')
+							}
 						>
 							Личный кабинет
 						</button>
 
 						<button
 							className={styles.userLogo}
-							onClick={() => navigate('/auth')}
+							onClick={() =>
+								isAuth ? navigate('/dashboard') : navigate('/auth')
+							}
 						>
 							<LogIn />
 						</button>
@@ -40,7 +47,9 @@ export const Header = () => {
 				Повышайте свою продуктивность с подпиской - ваш ключ к невероятным
 				приключениям
 			</span>
-			<button className={styles.subscribeBtn}>Подписывайся</button>
+			<button className={styles.subscribeBtn} onClick={onClick}>
+				Подписывайся
+			</button>
 		</header>
 	)
 }

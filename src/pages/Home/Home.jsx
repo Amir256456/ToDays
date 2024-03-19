@@ -1,21 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Benefits } from '../../components/Benefits/Benefits'
 import { Credits } from '../../components/Credits/Credits'
 import { Footer } from '../../components/Footer/Footer'
 import { Header } from '../../components/Header/Header'
-import { Plans } from '../../components/Plans/Plans'
-import styles from './Home.module.sass'
+import Plans from '../../components/Plans/Plans'
 
 export const Home = () => {
+	const [wasScrolled, setWasScrolled] = useState('')
+
+	const handleScroll = () => {}
+
 	return (
 		<>
-			<Header></Header>
+			<Header onClick={() => setWasScrolled(prev => prev + '1')}></Header>
 
 			<main>
-				<div className={styles.container}>
-					<Benefits></Benefits>
-				</div>
-				<Plans></Plans>
+				<Benefits></Benefits>
+				<Plans wasScrolled={wasScrolled}></Plans>
 				<Credits></Credits>
 			</main>
 

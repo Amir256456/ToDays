@@ -48,36 +48,60 @@ footer
 
 	.info
 		width: 100vw
-		padding: 80px 0
+		padding: 80px 20px
 		background: $dark
-		@include flex(center, center)
+		@include flex(center, center, 0, 0)
 		color: $light
 
-		.container
-			width: 900px
-			@include flex(center, center)
+		.infoItem
+			background: $dark
+			@include flex(center, center, 0, 0, column)
+			color: $light
+			width: 33%
+
+			&:nth-last-child(2)
+				width: 100%
+
+			&:last-child
+				justify-content: flex-end
+
+				div
+					background: #fff
+					img
+						width: 100px
+						height: 150px
+				
 
 			h6
+				@include font(1.6rem, 400, rgba(255, 255, 255, 0.70), normal, normal, center)
+				margin-bottom: 40px
+
+			.container
+				max-width: 900px
+				width: 100%
 				@include flex(center, center)
-				@include font(1.8rem, 700, rgba(255, 255, 255, 0.50), 22px, -0.5px, center)
-				margin: 20px
-				width: 49%
 
-			.details
-				@include flex(center, flex-start, 0, 0, column)
-				width: 49%
-				margin: 0 20px
-				height: 120px
+				h6
+					@include flex(center, center)
+					@include font(1.5rem, 700, rgba(255, 255, 255, 0.50), 22px, -0.5px, center)
+					margin: 20px
+					width: 49%
 
-				span
-					@include font(1.8rem, 700, rgba(255, 255, 255, 0.50), 22px, -0.5px)
-					@include flex(space-between, flex-start, 0, 0, column)
-					margin: 5px 0
+				.details
+					@include flex(center, flex-start, 0, 0, column)
+					width: 49%
+					margin: 20px
+					height: 120px
 
-			hr
-				height: 200px
-				width: 2px
-				background: $light
+					span
+						@include font(1.5rem, 700, rgba(255, 255, 255, 0.50), 22px, -0.5px)
+						@include flex(space-between, flex-start, 0, 0, column)
+						margin: 5px 0
+
+				hr
+					height: 200px
+					width: 2px
+					background: $light
 
 
 

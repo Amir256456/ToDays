@@ -7,6 +7,8 @@ export const RecoverCodeInput = ({ getRecoverCode }) => {
 		{ value: null, id: 1 },
 		{ value: null, id: 2 },
 		{ value: null, id: 3 },
+		{ value: null, id: 4 },
+		{ value: null, id: 5 },
 	])
 
 	const inputRefs = useRef([])
@@ -38,7 +40,7 @@ export const RecoverCodeInput = ({ getRecoverCode }) => {
 							e.target.value >= 10 ? e.target.value[1] : e.target.value
 						e.target.value =
 							e.target.value.length > 1 ? e.target.value[1] : e.target.value
-						digit.id != 3 &&
+						digit.id != 5 &&
 							e.target.value &&
 							inputRefs.current[digit.id + 1].focus()
 
